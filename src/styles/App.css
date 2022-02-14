@@ -1,0 +1,9 @@
+@import '../config/colors.css';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background);
+}

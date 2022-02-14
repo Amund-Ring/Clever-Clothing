@@ -1,0 +1,36 @@
+@import '../config/colors.css';
+
+.categoryLink {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* border: 10px solid green; */
+  /* border-collapse: collapse; */
+  background-color: var(--categoryLink-bg1);
+
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 60px;
+
+  text-decoration: none;
+  text-transform: capitalize;
+
+  color: var(--navbarText);
+}
+
+.categoryLink:visited {
+  color: var(--navbarText);
+}
+
+@media only screen and (min-width: 800px) {
+  .categoryLink:nth-of-type(2), .categoryLink:nth-of-type(3) {
+    background-color: var(--categoryLink-bg2);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .categoryLink:nth-of-type(even) {
+    background-color: var(--categoryLink-bg2);
+  }
+}

@@ -1,0 +1,18 @@
+:root {
+  --primary: #008dff;
+  --secondary: #4ecdc4;
+  --black: #000;
+  --white: #fff;
+  --background: #eee;
+
+  --navbar: #b5e1f6;
+  --navbarText: #103e53;
+  --menuContainer: #97d3ef;
+  --cartContainer: #7ac1e2;
+  --icon-hover: #307a9c;
+
+  --categoryLink-border: #880f6e;
+  --categoryLink-bg1: #d1f4f4;
+  --categoryLink-bg2: #caecf8;
+  --gridBorder: #103e53;
+}
