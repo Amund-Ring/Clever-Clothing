@@ -9,9 +9,15 @@ import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import categoriesAPI from '../api/categories';
 
-function Navbar() {
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [cartVisible, setCartVisible] = useState(false);
+function Navbar({
+  menuVisible,
+  setMenuVisible,
+  cartVisible,
+  setCartVisible,
+  closeMenus
+}) {
+  // const [menuVisible, setMenuVisible] = useState(false);
+  // const [cartVisible, setCartVisible] = useState(false);
   const [cartInstantHide, setCartInstantHide] = useState(false);
 
   const [categories, setCategories] = useState([]);
@@ -32,11 +38,6 @@ function Navbar() {
     setMenuVisible(false);
     setCartInstantHide(false);
     setCartVisible(v => !v);
-  };
-
-  const closeMenus = () => {
-    setMenuVisible(false);
-    setCartVisible(false);
   };
 
   const menuTransition = useTransition(menuVisible, {

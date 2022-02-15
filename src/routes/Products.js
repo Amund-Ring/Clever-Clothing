@@ -1,52 +1,53 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { BiArrowBack } from 'react-icons/bi';
+
 import categoriesAPI from '../api/categories';
+import productsAPI from '../api/products';
+import ProductListCard from '../components/ProductListCard';
 import '../styles/Products.css';
 
-function Products() {
+function Products({ closeMenus }) {
+  
   const { name } = useParams();
-  const [categoryId, setCategoryId] = useState('');
-  const [productItems, setProductItems] = useState([
-    {
-      id: 1,
-      name: 'Cargo Trouser',
-      description:
-        'The Cargo Trouser is a relaxed-fit cargo trouser, made with corduroy fabric. It features patch pockets on the side, an elastic waistband, and welt pockets in the back.',
-      price: 1200,
-      categoryId: [4],
-      variants: [
-        {
-          id: 1,
-          name: 'Black',
-          image:
-            'https://frend-ecom-api.azurewebsites.net/imgs/cargo_trouser_black.jpeg',
-          stock: 3
-        },
-        {
-          id: 2,
-          name: 'Sand',
-          image:
-            'https://frend-ecom-api.azurewebsites.net/imgs/cargo_trouser_sand.jpeg',
-          stock: 2
-        }
-      ]
-    }
-  ]);
+  const [categoryId, setCategoryId] = useState();
+  const [productItems, setProductItems] = useState([]);
 
   const getCategoryId = async () => {
     const categoryId = await categoriesAPI.getCategoryId(name);
     setCategoryId(categoryId);
   };
 
+  const getProductItems = async () => {
+    setProductItems([]);
+    const itemsOfCategory = await productsAPI.getItemsOfCategory(categoryId);
+    setProductItems(itemsOfCategory);
+  }
+
   useEffect(() => {
     getCategoryId();
-  }, []);
+  }, [name]);
+
+  useEffect(() => {
+    getProductItems();
+  }, [categoryId])
+  
 
   return (
     <main className='products'>
-      <div className="productListCard"></div>
-      <div className="productListCard"></div>
-      <div className="productListCard"></div>
+
+    <Link to='/' className='backArrowContainer' >
+    {/* onClick={() => closeMenus()} */}
+      <BiArrowBack className='backArrow' />
+    </Link>
+
+      {productItems.map(item =>
+        (item.variants.map(variant =>
+          <ProductListCard item={item} variant={variant} key={item.id} />
+        ))
+      )}
+
+
     </main>
   );
 }

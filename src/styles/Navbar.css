@@ -8,7 +8,6 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-
 }
 
 .logoContainer {
@@ -17,14 +16,20 @@
   background-color: var(--navbar);
   display: flex;
   align-items: center;
+
+}
+.link {
+  color: var(--textColor);
+  margin-left: 50px;
+  display: flex;
+  justify-items: center;
 }
 
 .logo {
   vertical-align: middle;
-  margin-left: 50px;
   font-family: 'Redressed';
   font-size: 40px;
-  color: var(--navbarText);
+  color: var(--textColor);
   user-select: none;
   text-decoration: none;
 }
@@ -43,7 +48,7 @@
 }
 
 .menuIcon {
-  color: var(--navbarText);
+  color: var(--textColor);
   font-size: 45px;
   transition: 0.3s;
 }
@@ -75,7 +80,7 @@
 }
 
 .cartIcon {
-  color: var(--navbarText);
+  color: var(--textColor);
   font-size: 45px;
   transition: 0.3s;
 }
@@ -100,10 +105,10 @@
 
 .closeIcon {
   font-size: 30px;
-  color: var(--navbarText);
+  color: var(--textColor);
   align-self: right;
   cursor: pointer;
-  color: var(--navbarText);
+  color: var(--textColor);
 }
 
 .closeIcon:hover {
@@ -121,6 +126,28 @@ li {
   user-select: none;
 }
 
-.link {
-  color: var(--navbarText);
+
+@media only screen and (max-width: 700px) {
+  .logoContainer {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .link {
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    text-align: center;
+    vertical-align: middle;
+    display: grid;
+    place-items: center;
+
+    text-align: left;
+
+    border: 2px solid red;
+  }
 }

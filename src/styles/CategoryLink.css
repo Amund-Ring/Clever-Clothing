@@ -10,7 +10,7 @@
   padding: 60px;
   text-decoration: none;
   text-transform: capitalize;
-  color: var(--navbarText);
+  color: var(--textColor);
 }
 
 .categoryLink:hover {
@@ -18,7 +18,7 @@
 }
 
 .categoryLink:visited {
-  color: var(--navbarText);
+  color: var(--textColor);
 }
 
 @media only screen and (min-width: 800px) {
@@ -39,6 +39,6 @@
   }
 
   .categoryLink:nth-of-type(even):hover {
-    background-color: var(--categoryLink-bg2-hover)
+    background-color: var(--categoryLink-bg2-hover);
   }
 }

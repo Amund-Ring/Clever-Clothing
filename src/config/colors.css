@@ -1,17 +1,15 @@
 :root {
-  --primary: #008dff;
-  --secondary: #4ecdc4;
+  /* --primary: #008dff;
+  --secondary: #4ecdc4; */
   --black: #000;
   --white: #fff;
-  --background: #eee;
+  --background: hsl(210, 60%, 96%);
+  --textColor: #103e53;
 
   --navbar: hsl(210, 100%, 85%);
   --menuContainer: hsl(210, 100%, 80%);
   --cartContainer: hsl(210, 100%, 75%);
-  --navbarText: #103e53;
   --icon-hover: #307a9c;
-
-
 
   --categoryLink-border: #880f6e;
   --categoryLink-bg1: hsl(210, 100%, 95%);
@@ -19,4 +17,6 @@
   --categoryLink-bg1-hover: hsl(40, 30%, 95%);
   --categoryLink-bg2-hover: hsl(40, 30%, 93%);
   --gridBorder: #103e53;
+
+  --productListCard-bg: hsl(210, 100%, 96%);
 }
