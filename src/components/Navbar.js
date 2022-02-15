@@ -9,21 +9,13 @@ import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import categoriesAPI from '../api/categories';
 
-function Navbar({
-  menuVisible,
-  setMenuVisible,
-  cartVisible,
-  setCartVisible,
-  closeMenus
-}) {
-  // const [menuVisible, setMenuVisible] = useState(false);
-  // const [cartVisible, setCartVisible] = useState(false);
+function Navbar({ menuVisible, setMenuVisible, cartVisible, setCartVisible, closeMenus }) {
   const [cartInstantHide, setCartInstantHide] = useState(false);
-
   const [categories, setCategories] = useState([]);
 
-  const getCategories = async () =>
+  const getCategories = async () => {
     setCategories(await categoriesAPI.getCategories());
+  };
 
   useEffect(() => {
     getCategories();
@@ -34,6 +26,7 @@ function Navbar({
     setCartVisible(false);
     setMenuVisible(v => !v);
   };
+
   const handleCartClick = () => {
     setMenuVisible(false);
     setCartInstantHide(false);

@@ -22,7 +22,7 @@ function App() {
         setCartVisible={setCartVisible}
         closeMenus={closeMenus}
       />
-      <Outlet closeMenus={closeMenus} />
+      <Outlet context={[closeMenus]} />
     </div>
   );
 }
