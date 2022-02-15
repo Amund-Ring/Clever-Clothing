@@ -4,19 +4,17 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
-  /* border: 10px solid green; */
-  /* border-collapse: collapse; */
   background-color: var(--categoryLink-bg1);
-
   display: flex;
   flex-direction: column-reverse;
   padding: 60px;
-
   text-decoration: none;
   text-transform: capitalize;
-
   color: var(--navbarText);
+}
+
+.categoryLink:hover {
+  background-color: var(--categoryLink-bg1-hover);
 }
 
 .categoryLink:visited {
@@ -24,13 +22,23 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .categoryLink:nth-of-type(2), .categoryLink:nth-of-type(3) {
+  .categoryLink:nth-of-type(2),
+  .categoryLink:nth-of-type(3) {
     background-color: var(--categoryLink-bg2);
+  }
+
+  .categoryLink:nth-of-type(2):hover,
+  .categoryLink:nth-of-type(3):hover {
+    background-color: var(--categoryLink-bg2-hover);
   }
 }
 
 @media only screen and (max-width: 800px) {
   .categoryLink:nth-of-type(even) {
     background-color: var(--categoryLink-bg2);
+  }
+
+  .categoryLink:nth-of-type(even):hover {
+    background-color: pink;
   }
 }

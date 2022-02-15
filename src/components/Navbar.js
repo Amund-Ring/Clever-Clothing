@@ -7,6 +7,7 @@ import { BsXLg } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 import '../styles/Navbar.css';
+import categoriesAPI from '../api/categories';
 
 function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -15,10 +16,11 @@ function Navbar() {
 
   const [categories, setCategories] = useState([]);
 
+  const getCategories = async () =>
+    setCategories(await categoriesAPI.getCategories());
+
   useEffect(() => {
-    axios
-      .get('https://frend-ecom-api.azurewebsites.net/Category')
-      .then(res => setCategories(res.data));
+    getCategories();
   }, []);
 
   const handleMenuClick = () => {
@@ -77,12 +79,17 @@ function Navbar() {
               </li>
 
               {categories.map(function (category) {
-                const categoryFormatted = category.name.toLowerCase().replace(/-/g, '');
-
+                const categoryFormatted = category.name
+                  .toLowerCase()
+                  .replace(/-/g, '');
 
                 return (
                   <li key={category.id}>
-                    <Link to={`/products/${categoryFormatted}`} className='link' onClick={closeMenus}>
+                    <Link
+                      to={`/products/${categoryFormatted}`}
+                      className='link'
+                      onClick={closeMenus}
+                    >
                       {category.name}
                     </Link>
                   </li>

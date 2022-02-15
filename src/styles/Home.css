@@ -3,20 +3,12 @@
 .home {
   width: 100%;
   height: 100%;
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 1px; */
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5px;
-  
-
   border: 0.5px solid var(--gridBorder);
   background-color: var(--gridBorder);
 
-
-  /* background-color: aqua; */
   /* border: 8px solid saddlebrown; */
 }
 
