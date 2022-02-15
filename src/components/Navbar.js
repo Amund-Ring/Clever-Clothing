@@ -74,7 +74,7 @@ function Navbar({
             </div>
             <ul>
               <li>
-                <Link to='/' className='link' onClick={closeMenus}>
+                <Link to='/' className='menuLink' onClick={closeMenus}>
                   Home
                 </Link>
               </li>
@@ -88,7 +88,7 @@ function Navbar({
                   <li key={category.id}>
                     <Link
                       to={`/products/${categoryFormatted}`}
-                      className='link'
+                      className='menuLink'
                       onClick={closeMenus}
                     >
                       {category.name}
