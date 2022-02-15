@@ -14,7 +14,7 @@ ReactDOM.render(
     <Routes>
       <Route path='/' element={<App />}>
         <Route path='/' element={<Home />} />
-        <Route path='products/:name' element={<Products />} />
+        <Route path='products/:category' element={<Products />} />
       </Route>
     </Routes>
   </BrowserRouter>,

@@ -9,12 +9,12 @@ import '../styles/Products.css';
 
 function Products({ closeMenus }) {
   
-  const { name } = useParams();
-  const [categoryId, setCategoryId] = useState();
+  const { category } = useParams();
+  const [categoryId, setCategoryId] = useState(null);
   const [productItems, setProductItems] = useState([]);
 
   const getCategoryId = async () => {
-    const categoryId = await categoriesAPI.getCategoryId(name);
+    const categoryId = await categoriesAPI.getCategoryId(category);
     setCategoryId(categoryId);
   };
 
@@ -26,11 +26,15 @@ function Products({ closeMenus }) {
 
   useEffect(() => {
     getCategoryId();
-  }, [name]);
+  }, [category]);
 
   useEffect(() => {
     getProductItems();
   }, [categoryId])
+
+  useEffect(() => {
+    getProductItems();
+  }, [])
   
 
   return (
@@ -43,7 +47,7 @@ function Products({ closeMenus }) {
 
       {productItems.map(item =>
         (item.variants.map(variant =>
-          <ProductListCard item={item} variant={variant} key={item.id} />
+          <ProductListCard item={item} variant={variant} key={`${item.id}.${variant.id}`} />
         ))
       )}
 
