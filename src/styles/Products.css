@@ -9,9 +9,9 @@
   flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 30px;
-
   padding-left: 100px;
   padding-right: 100px;
+  border: 0.5px solid var(--gridBorder);
 
   /* border: 8px solid saddlebrown; */
 }
