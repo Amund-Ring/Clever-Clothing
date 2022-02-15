@@ -2,8 +2,10 @@
 
 .products {
   width: 100%;
-  height: 100%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
   border: 8px solid saddlebrown;
 }
@@ -11,6 +13,7 @@
 .productListCard {
   width: 360px;
   height: 440px;
+  margin: 20px;
 
   border: 4px solid green;
 }

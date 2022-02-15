@@ -39,6 +39,6 @@
   }
 
   .categoryLink:nth-of-type(even):hover {
-    background-color: pink;
+    background-color: var(--categoryLink-bg2-hover)
   }
 }

@@ -45,6 +45,8 @@ function Products() {
   return (
     <main className='products'>
       <div className="productListCard"></div>
+      <div className="productListCard"></div>
+      <div className="productListCard"></div>
     </main>
   );
 }
