@@ -39,5 +39,6 @@
 @media only screen and (max-width: 750px) {
   .addToCartButton {
     width: 80%;
+    margin-bottom: 15px;
   }
 }

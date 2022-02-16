@@ -139,4 +139,8 @@
   .variantPickerContainerTitle {
     margin-top: 15px;
   }
+
+  .variantPickerContainer {
+    margin-bottom: 6px;
+  }
 }
