@@ -3,6 +3,7 @@
 .products {
   width: 100%;
   height: calc(100% - 80px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +13,7 @@
   padding-left: 100px;
   padding-right: 100px;
   border: 0.5px solid var(--gridBorder);
+  flex: 1;
 }
 
 .backArrowContainer {

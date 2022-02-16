@@ -20,12 +20,6 @@ function addToCart(item) {
   }
 }
 
-//Returns total number of order lines currently in the shopping cart
-function getAmountInCart() {
-  const shoppingCart = getCartFromLocalStorage();
-  return shoppingCart.length;
-}
-
 //Returns the sum total for the products in the shopping cart
 function getTotalSum() {
   const currentCart = getCartFromLocalStorage();
@@ -41,7 +35,6 @@ function getTotalSum() {
 const shoppingCartApi = {
   getCartFromLocalStorage,
   addToCart,
-  getAmountInCart,
   getTotalSum
 };
 
