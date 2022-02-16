@@ -1,4 +1,4 @@
-# Clever Clothing - Clothing store website
+# Clever Clothing - Clothing Store Website
 
 Check it out here:  
 [clothing.amundring.no](https://clothing.amundring.no/)
