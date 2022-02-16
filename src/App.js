@@ -7,11 +7,13 @@ import { useState } from 'react';
 function App() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [cartVisible, setCartVisible] = useState(false);
+  const [updateCart, setUpdateCart] = useState(false);
 
   const closeMenus = () => {
     setMenuVisible(false);
     setCartVisible(false);
   };
+
 
   return (
     <div className='app'>

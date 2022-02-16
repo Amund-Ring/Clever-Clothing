@@ -19,17 +19,20 @@
   --gridBorder: #103e53;
 
   --productListCard-bg: hsl(210, 100%, 96%);
+
   --productDetails-bg: hsl(210, 100%, 97%);
+  --addToCartButton: hsl(168, 86%, 40%);
+  --addToCartButton-hover: hsl(168, 86%, 36%);
 
   --colorPickerBlack: black;
-  --colorPickerSand: rgb(243, 231, 129);
-  --colorPickerWhite: rgb(255, 255, 255);
-  --colorPickerRed: rgb(229, 41, 41);
-  --colorPickerYellow: rgb(205, 211, 36);
-  --colorPickerAqua: rgb(38, 209, 195);
-  --colorPickerGray: rgb(74, 74, 74);
-  --colorPickerBlue: rgb(77, 109, 255);
-  --colorPickerMediumBlue: rgb(116, 167, 238);
-  --colorPickerArmy: rgb(77, 132, 65);
-  --colorPickerNavy: rgb(25, 152, 168);
+  --colorPickerSand: #d6c2aa;
+  --colorPickerWhite: white;
+  --colorPickerRed: #dd102c;
+  --colorPickerYellow: #fdeea5;
+  --colorPickerAqua: #89e2f1;
+  --colorPickerGray: #B9B9B9;
+  --colorPickerBlue: #2d68c8;
+  --colorPickerMediumBlue: #8c9cc5;
+  --colorPickerArmy: #7d7b66;
+  --colorPickerNavy: #1b448e;
 }

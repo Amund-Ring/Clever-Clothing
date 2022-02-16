@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import categoriesAPI from '../api/categories';
 import CartItem from './CartItem';
+import shoppingCartApi from '../api/shoppingCart';
 
 function Navbar({
   menuVisible,
@@ -18,96 +19,23 @@ function Navbar({
 }) {
   const [cartInstantHide, setCartInstantHide] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [cartIsEmpty, setCartIsEmpty] = useState(false);
-  const [shoppingCart, setShoppingCart] = useState([
-    {
-      item: {
-        id: 3,
-        name: 'Striped Tee',
-        description:
-          'The Striped Tee comes in a relaxed and genderless fit and features a hanger patch on the chest and has a folded rib neckline.',
-        price: 550,
-        categoryId: [0],
-        variants: [
-          {
-            id: 5,
-            name: 'Red',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/striped_tee_red.jpeg',
-            stock: 8
-          },
-          {
-            id: 6,
-            name: 'Yellow',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/striped_tee_yellow.jpeg',
-            stock: 5
-          },
-          {
-            id: 7,
-            name: 'Aqua',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/striped_tee_aqua.jpeg',
-            stock: 0
-          }
-        ]
-      },
-      variant: {
-        id: 6,
-        name: 'Yellow',
-        image:
-          'https://frend-ecom-api.azurewebsites.net/imgs/striped_tee_yellow.jpeg',
-        stock: 5
-      }
-    },
-    {
-      item: {
-        id: 10,
-        name: 'Oslo Tee',
-        description:
-          'The Oslo Tee is a t-shirt that is made from 100% organic cotton.',
-        price: 400,
-        categoryId: [0],
-        variants: [
-          {
-            id: 17,
-            name: 'Army',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/oslo_tee_army.jpeg',
-            stock: 4
-          },
-          {
-            id: 18,
-            name: 'Navy',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/oslo_tee_navy.jpeg',
-            stock: 2
-          },
-          {
-            id: 19,
-            name: 'White',
-            image:
-              'https://frend-ecom-api.azurewebsites.net/imgs/oslo_tee_white.jpeg',
-            stock: 17
-          }
-        ]
-      },
-      variant: {
-        id: 17,
-        name: 'Army',
-        image:
-          'https://frend-ecom-api.azurewebsites.net/imgs/oslo_tee_army.jpeg',
-        stock: 4
-      }
-    }
-  ]);
+  const [cartIsEmpty, setCartIsEmpty] = useState(true);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [sumTotal, setSumTotal] = useState(0);
 
-  const getCategories = async () => {
+
+
+  const updateState = async () => {
     setCategories(await categoriesAPI.getCategories());
+    const cart = await shoppingCartApi.getCartFromLocalStorage();
+    setShoppingCart(cart);
+    setCartIsEmpty(!cart.length > 0);
+    const sum = await shoppingCartApi.getTotalSum();
+    setSumTotal(sum);
   };
 
   useEffect(() => {
-    getCategories();
+    updateState();
   }, []);
 
   const handleMenuClick = () => {
@@ -133,6 +61,8 @@ function Navbar({
     enter: { y: 0 },
     leave: { y: -window.innerHeight }
   });
+
+
 
   return (
     <nav className='navbar'>
@@ -201,7 +131,7 @@ function Navbar({
                 <div className='cartItemContainer'>
                   <div className='cartItem-bg'>
                     {shoppingCart.map(cartItem => 
-                      <CartItem cartItem={cartItem} closeMenus={closeMenus}/>  
+                      <CartItem cartItem={cartItem} closeMenus={closeMenus} key={cartItem.id} />  
                     )}
                   </div>
                 </div>
@@ -209,7 +139,7 @@ function Navbar({
 
               <div className='totalContainer'>
                 <p className='total'>
-                  Total: <span>{Number(2400).toLocaleString('no')}</span> NOK
+                  Total: <span>{Number(sumTotal).toLocaleString('no')}</span> NOK
                 </p>
                 <p>Checkout</p>
               </div>

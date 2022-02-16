@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import '../styles/Product.css';
 import productsAPI from '../api/products';
 import VariantPicker from '../components/VariantPicker';
+import AddToCartButton from '../components/AddToCartButton';
 
 function Product({ location }) {
   const { id, variantName } = useParams();
@@ -22,7 +23,7 @@ function Product({ location }) {
 
   useEffect(() => {
     getProduct();
-  }, [id]);
+  }, [id, variantName]);
 
   if (!product) return <main className='productPage'>404 Page not found</main>;
   if (!productVariant)
@@ -34,7 +35,16 @@ function Product({ location }) {
         <div
           className='productImage'
           style={{ backgroundImage: `url(${productVariant.image})` }}
-        ></div>
+        >
+          {productVariant.stock === 0 && (
+            <div className='productPageNoStock'></div>
+          )}
+          {productVariant.stock === 0 && (
+            <div className='productPageNoStock-banner'>
+              <div>OUT OF STOCK</div>
+            </div>
+          )}
+        </div>
         <div className='productDetails'>
           <p>{product.name}</p>
           <p>{productVariant.name}</p>
@@ -46,9 +56,14 @@ function Product({ location }) {
           <p>Available variants:</p>
           <div className='variantPickerContainer'>
             {product.variants.map(v => (
-              <VariantPicker color={v.name.toLowerCase()} key={`${product.id}.${v.id}`} />
+              <VariantPicker
+                color={v.name.toLowerCase()}
+                productID={product.id}
+                key={`${product.id}.${v.id}`}
+              />
             ))}
           </div>
+          <AddToCartButton productItem={product} productVariant={productVariant} />
         </div>
       </div>
     </main>

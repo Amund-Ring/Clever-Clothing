@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/VariantPicker.css';
 
-function VariantPicker({ color }) {
-  const [colorClass, setColorClass] = useState('pink');
+function VariantPicker({ color, productID, setProductId }) {
+  const [colorClass, setColorClass] = useState('colorPickerSand');
+
 
   const getColorClass = () => {
     let className;
@@ -27,8 +29,8 @@ function VariantPicker({ color }) {
         break;
       case 'gray':
         className = 'colorPickerGray';
-
-        case 'blue':
+        break;
+      case 'blue':
         className = 'colorPickerBlue';
         break;
       case 'medium blue':
@@ -39,6 +41,7 @@ function VariantPicker({ color }) {
         break;
       case 'navy':
         className = 'colorPickerNavy';
+        break;
       default:
         className = 'colorPickerBlack';
     }
@@ -47,9 +50,13 @@ function VariantPicker({ color }) {
 
   useEffect(() => {
     getColorClass();
-  }, [])
+  }, []);
 
-  return <div className={`variantPicker ${colorClass}`}></div>;
+  return (
+    <Link to={`/product/${productID}/${color}`}>
+      <div className={`variantPicker ${colorClass}`}></div>
+    </Link>
+  );
 }
 
 export default VariantPicker;

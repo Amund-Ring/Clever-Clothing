@@ -9,7 +9,6 @@ function CategoryLink({ category }) {
   );
   const [closeMenus] = useOutletContext();
 
-
   return (
     <Link
       to={`/products/${categoryFormatted}`}

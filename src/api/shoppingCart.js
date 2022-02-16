@@ -1,11 +1,11 @@
 //Returns the cart from local storage or initializes a new one
 function getCartFromLocalStorage() {
   if (typeof window !== 'undefined') {
-    if (localStorage.getItem('shoppingCart') === null) {
-      localStorage.setItem('shoppingCart', JSON.stringify([]));
+    if (localStorage.getItem('shoppingCartCL') === null) {
+      localStorage.setItem('shoppingCartCL', JSON.stringify([]));
       return [];
     }
-    const cart = JSON.parse(localStorage.getItem('shoppingCart'));
+    const cart = JSON.parse(localStorage.getItem('shoppingCartCL'));
     return cart;
   }
   return [];
@@ -16,7 +16,7 @@ function addToCart(item) {
   let shoppingCart = getCartFromLocalStorage();
   shoppingCart = [...shoppingCart, item];
   if (typeof window !== 'undefined') {
-    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+    localStorage.setItem('shoppingCartCL', JSON.stringify(shoppingCart));
   }
 }
 
@@ -32,15 +32,19 @@ function getTotalSum() {
   let sum = 0;
 
   currentCart.forEach(lineItem => {
-    sum = sum + parseInt(lineItem.price, 10);
+    sum = sum + lineItem.item.price;
   });
+
+  console.log(typeof(sum));
 
   return sum;
 }
 
-export default {
+const shoppingCartApi = {
   getCartFromLocalStorage,
   addToCart,
   getAmountInCart,
   getTotalSum
 };
+
+export default shoppingCartApi;
