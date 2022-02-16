@@ -6,14 +6,18 @@ function ProductListCard({ item, variant }) {
   const [closeMenus] = useOutletContext();
 
   return (
-    <Link to={`/`} className='productListCard' onClick={closeMenus}>
+    <Link
+      to={`/product/${item.id}/${variant.name.toLowerCase()}`}
+      className='productListCard'
+      onClick={closeMenus}
+    >
       <div
         className='imageContainer'
         style={{ backgroundImage: `url(${variant.image})` }}
       ></div>
       <div className='productInfo'>
         <p className='productName'>
-          {item.name} – {variant.name}{' '}
+          {item.name} - {variant.name}
         </p>
         <p className='price'>
           <span>{Number(item.price).toLocaleString('no')}</span> NOK

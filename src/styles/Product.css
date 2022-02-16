@@ -1,0 +1,50 @@
+@import '../config/colors.css';
+
+.productPage {
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: grid;
+  place-items: center;
+
+
+  /* border: 0.5px solid var(--gridBorder); */
+
+  /* border: 8px solid red; */
+}
+
+.productContainer{
+  width: 760px;
+  height: 500px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
+  background-color: var(--productDetails-bg);
+  border: 0.5px solid var(--textColor);
+  /* border: 2px solid blue; */
+}
+
+.productImage {
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* border: 2px solid red; */
+}
+
+.productDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* width: 100%; */
+
+
+  border: 2px solid red;
+  overflow-wrap: break-word;
+}
+
+.productDetails > p > span {
+  background-color: pink;
+  word-spacing: -4px;
+}

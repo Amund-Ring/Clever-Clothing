@@ -1,15 +1,15 @@
 :root {
-  /* --primary: #008dff;
-  --secondary: #4ecdc4; */
   --black: #000;
   --white: #fff;
-  --background: hsl(210, 60%, 96%);
+  --background: hsl(210, 60%, 93%);
   --textColor: #103e53;
 
   --navbar: hsl(210, 100%, 85%);
   --menuContainer: hsl(210, 100%, 80%);
   --cartContainer: hsl(210, 100%, 75%);
+  --cartTotal-bg: hsl(210, 100%, 90%);
   --icon-hover: #307a9c;
+  --cartItem-bg: hsl(210, 100%, 95%);
 
   --categoryLink-border: #880f6e;
   --categoryLink-bg1: hsl(210, 100%, 95%);
@@ -19,4 +19,17 @@
   --gridBorder: #103e53;
 
   --productListCard-bg: hsl(210, 100%, 96%);
+  --productDetails-bg: hsl(210, 100%, 97%);
+
+  --colorPickerBlack: black;
+  --colorPickerSand: black;
+  --colorPickerWhite: black;
+  --colorPickerRed: black;
+  --colorPickerYellow: black;
+  --colorPickerAqua: black;
+  --colorPickerGray: black;
+  --colorPickerBlue: black;
+  --colorPickerMediumBlue: black;
+  --colorPickerArmy: black;
+  --colorPickerNavy: black;
 }

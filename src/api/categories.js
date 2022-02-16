@@ -35,8 +35,11 @@ const getCategoryId = async categoryName => {
   return filtered[0].id;
 };
 
-export default {
+
+const categoriesApi = {
   getCategories,
   getFrontPageCategories,
   getCategoryId
 };
+
+export default categoriesApi;

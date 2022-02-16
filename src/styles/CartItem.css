@@ -1,0 +1,47 @@
+@import '../config/colors.css';
+
+.cartItem {
+  width: 100%;
+  height: 90px;
+  background-color: var(--cartItem-bg);
+  opacity: 1;
+  display: flex;
+
+  /* border: 2px solid black; */
+}
+
+.cartItem > div {
+  /* border-left: 1px solid salmon; */
+}
+
+.cartItemImgLink {
+
+  width: 70px;
+  min-width: 70px;
+}
+
+.cartItemImg {
+  height: 100%;
+  width: 70px;
+  min-width: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border-right: 0.5px solid var(--textColor); */
+}
+
+.cartItemDetails {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cartItemDelete {
+  width: 90px;
+  min-width: 90px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: var(--textColor);
+}
