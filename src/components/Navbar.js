@@ -4,6 +4,7 @@ import { BiCart } from 'react-icons/bi';
 import { BiMenu } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 import '../styles/Navbar.css';
 import categoriesAPI from '../api/categories';
@@ -69,6 +70,11 @@ function Navbar({
       <div className='logoContainer'>
         <Link to='/' className='link' onClick={closeMenus}>
           <h1 className='logo'>Clever Clothing</h1>
+        </Link>
+      </div>
+      <div className='mobileLogoContainer'>
+        <Link to='/' onClick={closeMenus}>
+          <img src={logo} className='mobileLogo' />
         </Link>
       </div>
       <div className='menuIconContainer' onClick={handleMenuClick}>

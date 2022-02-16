@@ -2,13 +2,9 @@
 
 .productPage {
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 80px);
   display: grid;
   place-items: center;
-
-  /* border: 0.5px solid var(--gridBorder); */
-
-  /* border: 8px solid red; */
 }
 
 .productContainer {
@@ -18,7 +14,6 @@
   box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
   background-color: var(--productDetails-bg);
   border: 0.5px solid var(--textColor);
-  /* border: 2px solid blue; */
 }
 
 .productImage {
@@ -27,8 +22,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  /* border: 2px solid red; */
 }
 
 .productPageNoStock {

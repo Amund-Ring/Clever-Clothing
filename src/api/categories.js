@@ -38,8 +38,8 @@ const getCategoryId = async categoryName => {
 
 const getCategoryName = async categoryId => {
   const categories = await getCategories();
-  const filtered = categories.filter(category => category.id == categoryId);
-  if (filtered[0]) return filtered[0].name.toLowerCase();
+  const filtered = categories.filter(category => category.id === categoryId);
+  if (filtered[0]) return filtered[0].name.toLowerCase().replace('-', '');
 };
 
 const categoriesApi = {

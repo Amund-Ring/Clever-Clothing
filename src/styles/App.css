@@ -1,12 +1,9 @@
 @import '../config/colors.css';
 
 .app {
-  display: flex;
   height: 100vh;
-  flex-direction: column;
-
   width: 100vw;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background);
-
-  /* border: 12px solid red; */
 }

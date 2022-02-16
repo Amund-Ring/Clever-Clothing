@@ -24,7 +24,10 @@ function Product({ location }) {
     const variant = productsAPI.getVariant(productItem, variantName);
     setProductVariant(variant);
 
-    const productCategory = await categoriesApi.getCategoryName(productItem.categoryId);
+    const categoryId = productItem.categoryId[0];
+    const productCategory = await categoriesApi.getCategoryName(categoryId);
+
+    console.log(productCategory);
     setCategory(productCategory);
   };
 
