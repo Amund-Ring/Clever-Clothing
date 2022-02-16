@@ -13,11 +13,8 @@
   font-size: 18px;
   text-decoration: none;
   user-select: none;
-
-  /* border: 2px solid red; */
-  /* border: 0.5px solid var(--textColor) */
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px;
-} 
+}
 
 .addToCartButton-disabled {
   width: 70%;
@@ -28,7 +25,6 @@
   align-self: center;
   color: var(--white);
   background-color: var(--addToCartButton-disabled);
-  /* cursor: pointer; */
   user-select: none;
   font-size: 18px;
   text-decoration: none;
@@ -38,5 +34,4 @@
 .addToCartButton:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 1px;
   background-color: var(--addToCartButton-hover);
-
 }

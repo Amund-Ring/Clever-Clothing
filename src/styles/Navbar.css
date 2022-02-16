@@ -61,7 +61,7 @@
 
 .menuIcon {
   color: var(--textColor);
-  font-size: 38px;
+  font-size: 40px;
   transition: 0.3s;
 }
 
@@ -104,13 +104,36 @@ li {
   cursor: pointer;
 }
 
-.cartIconContainer:hover .cartIcon {
+.cartIconContainer > div {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+
+  /* border: 2px solid red; */
+}
+
+.cartIconNumber {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--textColor);
+  transition: 0.3s;
+}
+
+.cartIconContainer:hover .cartIcon,
+.cartIconContainer:hover .cartIconNumber {
   color: var(--icon-hover);
 }
 
 .cartIcon {
   color: var(--textColor);
-  font-size: 40px;
+  font-size: 38px;
   transition: 0.3s;
 }
 

@@ -26,8 +26,6 @@ function Product({ location }) {
 
     const categoryId = productItem.categoryId[0];
     const productCategory = await categoriesApi.getCategoryName(categoryId);
-
-    console.log(productCategory);
     setCategory(productCategory);
   };
 
@@ -41,7 +39,11 @@ function Product({ location }) {
 
   return (
     <main className='productPage'>
-      <Link to={`/products/${category}`} className='backArrowContainer' onClick={closeMenus}>
+      <Link
+        to={`/products/${category}`}
+        className='backArrowContainer'
+        onClick={closeMenus}
+      >
         <BiArrowBack className='backArrow' />
       </Link>
       <div className='productContainer'>

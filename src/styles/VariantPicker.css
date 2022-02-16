@@ -5,12 +5,8 @@
   height: 40px;
   border-radius: 50%;
   border: 0.5px solid gray;
-
   background-color: pink;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 0px; */
-
 }
-
 
 .colorPickerBlack {
   background-color: var(--colorPickerBlack);
@@ -45,4 +41,3 @@
 .colorPickerNavy {
   background-color: var(--colorPickerNavy);
 }
-

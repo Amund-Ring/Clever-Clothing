@@ -2,8 +2,13 @@ import React from 'react';
 import '../styles/CartItem.css';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import shoppingCartApi from '../api/shoppingCart';
 
-function CartItem({ cartItem, closeMenus }) {
+function CartItem({ cartItem, closeMenus, setUpdateCart }) {
+  const handleDelete = () => {
+    shoppingCartApi.deleteCartItem(cartItem.id);
+    setUpdateCart(b => !b)
+  }
 
   return (
     <div className='cartItem'>
@@ -33,7 +38,7 @@ function CartItem({ cartItem, closeMenus }) {
         </Link>
         <p className='cartItemDetailsPrice'>{cartItem.item.price} NOK</p>
       </div>
-      <div className='cartItemDelete'>
+      <div className='cartItemDelete' onClick={handleDelete}>
         <AiOutlineDelete className='bin' />
       </div>
     </div>

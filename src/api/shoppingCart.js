@@ -32,10 +32,35 @@ function getTotalSum() {
   return sum;
 }
 
+//Returns total number of order lines currently in the shopping cart
+function getAmountInCart() {
+  const shoppingCart = getCartFromLocalStorage();
+  return shoppingCart.length;
+}
+
+//Removes the given cartItem from the shopping cart and returns amount of items left in cart
+function deleteCartItem(itemID) {
+  const currentCart = getCartFromLocalStorage();
+
+  const updatedCart = currentCart.filter(
+    item => item.id !== itemID
+  );
+
+  if (typeof window !== "undefined") {
+    localStorage.setItem("shoppingCartCL", JSON.stringify(updatedCart));
+  }
+
+  return updatedCart.length;
+}
+
+
+
 const shoppingCartApi = {
   getCartFromLocalStorage,
   addToCart,
-  getTotalSum
+  getTotalSum,
+  getAmountInCart,
+  deleteCartItem
 };
 
 export default shoppingCartApi;

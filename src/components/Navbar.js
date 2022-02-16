@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { animated, useTransition } from 'react-spring';
-import { BiCart } from 'react-icons/bi';
+import { BsBag } from 'react-icons/bs';
 import { BiMenu } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -16,15 +16,16 @@ function Navbar({
   setMenuVisible,
   cartVisible,
   setCartVisible,
-  closeMenus
+  closeMenus,
+  updateCart,
+  setUpdateCart
 }) {
   const [cartInstantHide, setCartInstantHide] = useState(false);
   const [categories, setCategories] = useState([]);
   const [cartIsEmpty, setCartIsEmpty] = useState(true);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [sumTotal, setSumTotal] = useState(0);
-
-
+  const [amountInBag, setAmountInBag] = useState(0);
 
   const updateState = async () => {
     setCategories(await categoriesAPI.getCategories());
@@ -33,11 +34,13 @@ function Navbar({
     setCartIsEmpty(!cart.length > 0);
     const sum = await shoppingCartApi.getTotalSum();
     setSumTotal(sum);
+    const itemsInBag = shoppingCartApi.getAmountInCart();
+    setAmountInBag(itemsInBag);
   };
 
   useEffect(() => {
     updateState();
-  }, []);
+  }, [updateCart]);
 
   const handleMenuClick = () => {
     setCartInstantHide(true);
@@ -63,8 +66,6 @@ function Navbar({
     leave: { y: -window.innerHeight }
   });
 
-
-
   return (
     <nav className='navbar'>
       <div className='logoContainer'>
@@ -81,7 +82,10 @@ function Navbar({
         <BiMenu className='menuIcon' />
       </div>
       <div className='cartIconContainer' onClick={handleCartClick}>
-        <BiCart className='cartIcon' />
+        <div>
+          <BsBag className='cartIcon' />
+          <div className='cartIconNumber'>{amountInBag}</div>
+        </div>
       </div>
 
       {menuTransition((style, item) =>
@@ -136,16 +140,22 @@ function Navbar({
               {!cartIsEmpty && (
                 <div className='cartItemContainer'>
                   <div className='cartItem-bg'>
-                    {shoppingCart.map(cartItem => 
-                      <CartItem cartItem={cartItem} closeMenus={closeMenus} key={cartItem.id} />  
-                    )}
+                    {shoppingCart.map(cartItem => (
+                      <CartItem
+                        cartItem={cartItem}
+                        closeMenus={closeMenus}
+                        key={cartItem.id}
+                        setUpdateCart={setUpdateCart}
+                      />
+                    ))}
                   </div>
                 </div>
               )}
 
               <div className='totalContainer'>
                 <p className='total'>
-                  Total: <span>{Number(sumTotal).toLocaleString('no')}</span> NOK
+                  Total: <span>{Number(sumTotal).toLocaleString('no')}</span>{' '}
+                  NOK
                 </p>
                 <p>Checkout</p>
               </div>

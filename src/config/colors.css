@@ -1,29 +1,29 @@
 :root {
   --black: #000;
   --white: #fff;
-  --background: hsl(210, 60%, 93%);
+  --background: #e2edf8;
   --textColor: #103e53;
 
   --navbar: hsl(210, 100%, 85%);
   --menuContainer: hsl(210, 100%, 80%);
   --cartContainer: hsl(210, 100%, 75%);
   --cartTotal-bg: hsl(210, 100%, 90%);
-  --icon-hover: #307a9c;
+  --icon-hover: hsl(199, 53%, 40%);
   --cartItem-bg: hsl(210, 100%, 95%);
 
-  --categoryLink-border: #880f6e;
+  --categoryLink-border: hsl(313, 80%, 30%);
   --categoryLink-bg1: hsl(210, 100%, 95%);
   --categoryLink-bg2: hsl(210, 100%, 94%);
   --categoryLink-bg1-hover: hsl(40, 30%, 95%);
   --categoryLink-bg2-hover: hsl(40, 30%, 93%);
-  --gridBorder: #bdc3c6;
+  --gridBorder: hsl(200, 7%, 76%);
 
   --productListCard-bg: hsl(210, 100%, 96%);
 
   --productDetails-bg: hsl(210, 100%, 97%);
   --addToCartButton: hsl(168, 86%, 40%);
   --addToCartButton-hover: hsl(168, 86%, 36%);
-  --addToCartButton-disabled: rgb(152, 151, 151);
+  --addToCartButton-disabled: hsl(0, 0%, 59%);
 
   --colorPickerBlack: black;
   --colorPickerSand: #d6c2aa;
@@ -31,7 +31,7 @@
   --colorPickerRed: #dd102c;
   --colorPickerYellow: #fdeea5;
   --colorPickerAqua: #89e2f1;
-  --colorPickerGray: #B9B9B9;
+  --colorPickerGray: #b9b9b9;
   --colorPickerBlue: #2d68c8;
   --colorPickerMediumBlue: #8c9cc5;
   --colorPickerArmy: #7d7b66;

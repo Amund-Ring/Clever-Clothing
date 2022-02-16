@@ -9,7 +9,6 @@ import Products from './routes/Products';
 import Product from './routes/Product';
 
 ReactDOM.render(
-
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />}>

@@ -6,16 +6,9 @@
   background-color: var(--cartItem-bg);
   opacity: 1;
   display: flex;
-
-  /* border: 2px solid black; */
-}
-
-.cartItem > div {
-  /* border-left: 1px solid salmon; */
 }
 
 .cartItemImgLink {
-
   width: 70px;
   min-width: 70px;
 }
@@ -27,7 +20,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* border-right: 0.5px solid var(--textColor); */
 }
 
 .cartItemDetails {

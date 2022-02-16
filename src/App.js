@@ -12,8 +12,8 @@ function App() {
   const closeMenus = () => {
     setMenuVisible(false);
     setCartVisible(false);
+    setUpdateCart(bool => !bool);
   };
-
 
   return (
     <div className='app'>
@@ -23,6 +23,8 @@ function App() {
         cartVisible={cartVisible}
         setCartVisible={setCartVisible}
         closeMenus={closeMenus}
+        updateCart={updateCart}
+        setUpdateCart={setUpdateCart}
       />
       <Outlet context={[closeMenus]} />
     </div>
