@@ -5,7 +5,7 @@
   height: calc(100vh - 90px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5px;
+  gap: 1px;
   border: 0.5px solid var(--gridBorder);
   background-color: var(--gridBorder);
 

@@ -35,8 +35,6 @@ function getTotalSum() {
     sum = sum + lineItem.item.price;
   });
 
-  console.log(typeof(sum));
-
   return sum;
 }
 

@@ -12,11 +12,28 @@
   cursor: pointer;
   font-size: 18px;
   text-decoration: none;
+  user-select: none;
 
   /* border: 2px solid red; */
   /* border: 0.5px solid var(--textColor) */
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px;
 } 
+
+.addToCartButton-disabled {
+  width: 70%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  vertical-align: middle;
+  align-self: center;
+  color: var(--white);
+  background-color: var(--addToCartButton-disabled);
+  /* cursor: pointer; */
+  user-select: none;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px;
+}
 
 .addToCartButton:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 1px;

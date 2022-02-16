@@ -32,14 +32,21 @@ const getCategoryId = async categoryName => {
   const filtered = categories.filter(
     category => category.name.toLowerCase().replace(/-/g, '') === categoryName
   );
-  return filtered[0].id;
+
+  if (filtered[0]) return filtered[0].id;
 };
 
+const getCategoryName = async categoryId => {
+  const categories = await getCategories();
+  const filtered = categories.filter(category => category.id == categoryId);
+  if (filtered[0]) return filtered[0].name.toLowerCase();
+};
 
 const categoriesApi = {
   getCategories,
   getFrontPageCategories,
-  getCategoryId
+  getCategoryId,
+  getCategoryName
 };
 
 export default categoriesApi;

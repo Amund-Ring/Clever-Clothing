@@ -3,7 +3,7 @@ import '../styles/AddToCartButton.css';
 import shoppingCartApi from '../api/shoppingCart';
 import { Link } from 'react-router-dom';
 
-function AddToCartButton({ productItem, productVariant }) {
+function AddToCartButton({ productItem, productVariant, disabled }) {
   const handlePress = () => {
     const newCartItem = {
       id: Date.now(),
@@ -14,12 +14,12 @@ function AddToCartButton({ productItem, productVariant }) {
     shoppingCartApi.addToCart(newCartItem);
   };
 
+  if (disabled) return <div className='addToCartButton-disabled'>Out of stock</div>;
+
   return (
-    <Link to='/' className='addToCartButton'>
-      <div onClick={handlePress}>
-        Add to cart
-      </div>
-    </Link>
+    <div className='addToCartButton' onClick={handlePress}>
+      Add to cart
+    </div>
   );
 }
 

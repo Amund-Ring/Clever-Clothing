@@ -16,13 +16,14 @@
   --categoryLink-bg2: hsl(210, 100%, 94%);
   --categoryLink-bg1-hover: hsl(40, 30%, 95%);
   --categoryLink-bg2-hover: hsl(40, 30%, 93%);
-  --gridBorder: #103e53;
+  --gridBorder: #bdc3c6;
 
   --productListCard-bg: hsl(210, 100%, 96%);
 
   --productDetails-bg: hsl(210, 100%, 97%);
   --addToCartButton: hsl(168, 86%, 40%);
   --addToCartButton-hover: hsl(168, 86%, 36%);
+  --addToCartButton-disabled: rgb(152, 151, 151);
 
   --colorPickerBlack: black;
   --colorPickerSand: #d6c2aa;

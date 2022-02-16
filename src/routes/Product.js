@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useOutletContext, useParams } from 'react-router-dom';
+import { BiArrowBack } from 'react-icons/bi';
 
 import '../styles/Product.css';
 import productsAPI from '../api/products';
 import VariantPicker from '../components/VariantPicker';
 import AddToCartButton from '../components/AddToCartButton';
+import categoriesApi from '../api/categories';
 
 function Product({ location }) {
   const { id, variantName } = useParams();
   const [product, setProduct] = useState();
   const [productVariant, setProductVariant] = useState();
+  const [closeMenus] = useOutletContext();
+  const [category, setCategory] = useState('');
 
   const getProduct = async () => {
     const productItem = await productsAPI.getProduct(id);
@@ -19,6 +23,9 @@ function Product({ location }) {
 
     const variant = productsAPI.getVariant(productItem, variantName);
     setProductVariant(variant);
+
+    const productCategory = await categoriesApi.getCategoryName(productItem.categoryId);
+    setCategory(productCategory);
   };
 
   useEffect(() => {
@@ -31,6 +38,9 @@ function Product({ location }) {
 
   return (
     <main className='productPage'>
+      <Link to={`/products/${category}`} className='backArrowContainer' onClick={closeMenus}>
+        <BiArrowBack className='backArrow' />
+      </Link>
       <div className='productContainer'>
         <div
           className='productImage'
@@ -46,24 +56,33 @@ function Product({ location }) {
           )}
         </div>
         <div className='productDetails'>
-          <p>{product.name}</p>
-          <p>{productVariant.name}</p>
-          <p>
+          <p className='productDetailsName'>{`${product.name} - ${productVariant.name}`}</p>
+          <p className='productDetailsPrice'>
             <span>{Number(1100).toLocaleString('no')}</span> NOK
           </p>
-          <p>Description:</p>
-          <p>{product.description}</p>
-          <p>Available variants:</p>
-          <div className='variantPickerContainer'>
-            {product.variants.map(v => (
-              <VariantPicker
-                color={v.name.toLowerCase()}
-                productID={product.id}
-                key={`${product.id}.${v.id}`}
-              />
-            ))}
+          <div>
+            <p className='productDetailsDescription'>Description:</p>
+            <p>{product.description}</p>
           </div>
-          <AddToCartButton productItem={product} productVariant={productVariant} />
+
+          <div>
+            <p className='variantPickerContainerTitle'>Available variants:</p>
+            <div className='variantPickerContainer'>
+              {product.variants.map(v => (
+                <VariantPicker
+                  color={v.name.toLowerCase()}
+                  productID={product.id}
+                  key={`${product.id}.${v.id}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <AddToCartButton
+            productItem={product}
+            productVariant={productVariant}
+            disabled={productVariant.stock === 0}
+          />
         </div>
       </div>
     </main>
