@@ -153,7 +153,7 @@ function Navbar({
               )}
 
               <div className='totalContainer'>
-                <p className='total'>
+                <p>
                   Total: <span>{Number(sumTotal).toLocaleString('no')}</span>{' '}
                   NOK
                 </p>
