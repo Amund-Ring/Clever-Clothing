@@ -121,7 +121,7 @@ li {
   position: absolute;
   display: flex;
   flex-direction: column-reverse;
-  margin-bottom: 5px;
+  margin-bottom: 9px;
   align-items: center;
   color: var(--textColor);
   transition: 0.3s;
