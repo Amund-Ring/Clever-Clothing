@@ -127,4 +127,16 @@
     flex-direction: column;
     justify-content: center;
   }
+
+  .productDetailsPrice {
+    margin-top: 15px;
+  }
+
+  .productDetailsDescription {
+    margin-top: 15px;
+  }
+
+  .variantPickerContainerTitle {
+    margin-top: 15px;
+  }
 }

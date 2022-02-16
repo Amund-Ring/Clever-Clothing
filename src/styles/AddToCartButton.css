@@ -35,3 +35,9 @@
   box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 1px;
   background-color: var(--addToCartButton-hover);
 }
+
+@media only screen and (max-width: 750px) {
+  .addToCartButton {
+    width: 80%;
+  }
+}
