@@ -48,3 +48,14 @@
   background-color: pink;
   word-spacing: -4px;
 }
+
+.variantPickerContainer {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+
+  border: 1px solid gray
+}

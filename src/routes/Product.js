@@ -44,7 +44,11 @@ function Product({ location }) {
           <p>Description:</p>
           <p>{product.description}</p>
           <p>Available variants:</p>
-          <VariantPicker color={productVariant.name.toLowerCase()} />
+          <div className='variantPickerContainer'>
+            {product.variants.map(v => (
+              <VariantPicker color={v.name.toLowerCase()} key={`${product.id}.${v.id}`} />
+            ))}
+          </div>
         </div>
       </div>
     </main>

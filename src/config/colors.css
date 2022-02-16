@@ -22,14 +22,14 @@
   --productDetails-bg: hsl(210, 100%, 97%);
 
   --colorPickerBlack: black;
-  --colorPickerSand: black;
-  --colorPickerWhite: black;
-  --colorPickerRed: black;
-  --colorPickerYellow: black;
-  --colorPickerAqua: black;
-  --colorPickerGray: black;
-  --colorPickerBlue: black;
-  --colorPickerMediumBlue: black;
-  --colorPickerArmy: black;
-  --colorPickerNavy: black;
+  --colorPickerSand: rgb(243, 231, 129);
+  --colorPickerWhite: rgb(255, 255, 255);
+  --colorPickerRed: rgb(229, 41, 41);
+  --colorPickerYellow: rgb(205, 211, 36);
+  --colorPickerAqua: rgb(38, 209, 195);
+  --colorPickerGray: rgb(74, 74, 74);
+  --colorPickerBlue: rgb(77, 109, 255);
+  --colorPickerMediumBlue: rgb(116, 167, 238);
+  --colorPickerArmy: rgb(77, 132, 65);
+  --colorPickerNavy: rgb(25, 152, 168);
 }
