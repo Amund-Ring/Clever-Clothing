@@ -103,8 +103,6 @@ li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  border: 2px solid red;
 }
 
 .cartIconContainer > div {
@@ -114,8 +112,6 @@ li {
   justify-content: center;
   align-items: center;
   position: absolute;
-
-  border: 2px solid blue;
 }
 
 .cartIconNumber {
@@ -129,8 +125,6 @@ li {
   align-items: center;
   color: var(--textColor);
   transition: 0.3s;
-
-  border: 2px solid green;
 }
 
 .cartIconContainer:hover .cartIcon,
@@ -252,7 +246,6 @@ li {
     place-items: center;
     text-align: left;
   }
-
 
   .dropDownMenu {
     width: 100vw;
