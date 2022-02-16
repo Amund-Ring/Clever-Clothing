@@ -244,8 +244,10 @@ li {
     text-align: left;
   }
 
+
   .dropDownMenu {
     width: 100vw;
+    height: 100vh;
     border-left: none;
   }
 
@@ -256,6 +258,7 @@ li {
 
   .shoppingCart {
     width: 100vw;
+    height: 100vh;
     border-left: none;
   }
 
