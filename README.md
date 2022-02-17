@@ -1,6 +1,9 @@
 # Clever Clothing - Clothing Store Website
 
-Check it out here:  
+#### Technologies used:
+React, React Router, React Spring, Axios
+
+#### Check it out here:  
 [clothing.amundring.no](https://clothing.amundring.no/)
 
 
