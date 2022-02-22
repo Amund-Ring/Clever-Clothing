@@ -33,7 +33,8 @@ function Product({ location }) {
     getProduct();
   }, [id, variantName]);
 
-  if (!product) return <main className='productPage'>404 Page not found</main>;
+  if (!product)
+    return <main className='productPage'>404 Page not found</main>;
   if (!productVariant)
     return <main className='productPage'>404 Page not found</main>;
 

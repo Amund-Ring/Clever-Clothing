@@ -1,5 +1,5 @@
 import './styles/App.css';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import { useState } from 'react';
@@ -18,13 +18,13 @@ function App() {
   return (
     <div className='app'>
       <Navbar
-        menuVisible={menuVisible}
-        setMenuVisible={setMenuVisible}
         cartVisible={cartVisible}
-        setCartVisible={setCartVisible}
         closeMenus={closeMenus}
-        updateCart={updateCart}
+        menuVisible={menuVisible}
+        setCartVisible={setCartVisible}
+        setMenuVisible={setMenuVisible}
         setUpdateCart={setUpdateCart}
+        updateCart={updateCart}
       />
       <Outlet context={[closeMenus]} />
     </div>

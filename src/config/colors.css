@@ -1,5 +1,4 @@
 :root {
-  --black: #000;
   --white: #fff;
   --background: #e2edf8;
   --textColor: #103e53;
@@ -11,7 +10,6 @@
   --icon-hover: hsl(199, 53%, 40%);
   --cartItem-bg: hsl(210, 100%, 95%);
 
-  --categoryLink-border: hsl(313, 80%, 30%);
   --categoryLink-bg1: hsl(210, 100%, 95%);
   --categoryLink-bg2: hsl(210, 100%, 94%);
   --categoryLink-bg1-hover: hsl(40, 30%, 95%);
