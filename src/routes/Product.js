@@ -8,6 +8,8 @@ import VariantPicker from '../components/VariantPicker';
 import AddToCartButton from '../components/AddToCartButton';
 import categoriesApi from '../api/categories';
 
+import productImages from '../assets/products/productImports';
+
 function Product({ location }) {
   const { id, variantName } = useParams();
   const [product, setProduct] = useState();
@@ -33,8 +35,7 @@ function Product({ location }) {
     getProduct();
   }, [id, variantName]);
 
-  if (!product)
-    return <main className='productPage'>404 Page not found</main>;
+  if (!product) return <main className='productPage'>404 Page not found</main>;
   if (!productVariant)
     return <main className='productPage'>404 Page not found</main>;
 
@@ -50,7 +51,9 @@ function Product({ location }) {
       <div className='productContainer'>
         <div
           className='productImage'
-          style={{ backgroundImage: `url(${productVariant.image})` }}
+          style={{
+            backgroundImage: `url(${productImages[`${productVariant.image}`]})`
+          }}
         >
           {productVariant.stock === 0 && (
             <div className='productPageNoStock'></div>
@@ -61,6 +64,7 @@ function Product({ location }) {
             </div>
           )}
         </div>
+
         <div className='productDetails'>
           <p className='productDetailsName'>{`${product.name} - ${productVariant.name}`}</p>
           <p className='productDetailsPrice'>

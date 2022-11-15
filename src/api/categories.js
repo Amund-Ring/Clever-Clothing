@@ -1,11 +1,16 @@
 import axios from 'axios';
+import categories from './categoryData';
 
 const getCategories = async () => {
-  let categories;
+  // This is commented out because the API is no longer functional.
+  // Using local data instead.
 
-  await axios
-    .get('https://frend-ecom-api.azurewebsites.net/Category')
-    .then(res => (categories = res.data));
+  // let categories;
+
+  // await axios
+  //   .get('https://frend-ecom-api.azurewebsites.net/Category')
+  //   .then(res => (categories = res.data));
+
 
   return categories;
 };

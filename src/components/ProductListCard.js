@@ -2,8 +2,11 @@ import React from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
 import '../styles/ProductListCard.css';
 
+import productImages from '../assets/products/productImports';
+
 function ProductListCard({ item, variant }) {
   const [closeMenus] = useOutletContext();
+  const image = require(`../assets/products/normal_hoodie_blue.jpeg`);
 
   return (
     <Link
@@ -13,8 +16,9 @@ function ProductListCard({ item, variant }) {
     >
       <div
         className='imageContainer'
-        style={{ backgroundImage: `url(${variant.image})` }}
+        style={{ backgroundImage: `url(${productImages[`${variant.image}`]})` }}
       ></div>
+
       <div className='productInfo'>
         <p className='productName'>
           {item.name} - {variant.name}

@@ -1,21 +1,30 @@
 import axios from 'axios';
+import products from './productData';
 
 const getProducts = async () => {
-  let products;
+  // This is commented out because the API is no longer functional.
+  // Using local data instead.
 
-  await axios
-    .get('https://frend-ecom-api.azurewebsites.net/Product')
-    .then(res => (products = res.data));
+  // let products;
+
+  // await axios
+  //   .get('https://frend-ecom-api.azurewebsites.net/Product')
+  //   .then(res => (products = res.data));
 
   return products;
 };
 
 const getProduct = async id => {
-  let product;
+  // This is commented out because the API is no longer functional.
+  // Using local data instead.
 
-  await axios
-    .get(`https://frend-ecom-api.azurewebsites.net/Product/${id}`)
-    .then(res => (product = res.data));
+  // let product;
+
+  // await axios
+  //   .get(`https://frend-ecom-api.azurewebsites.net/Product/${id}`)
+  //   .then(res => (product = res.data));
+
+  const product = products.filter(prod => prod.id == id)[0]
 
   return product;
 };
