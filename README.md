@@ -5,8 +5,6 @@ React, React Router, React Spring, Axios
 
 #### Check it out here:  
 [clothing.amundring.no](https://clothing.amundring.no/)  
-(Sometimes the servers take a little time to wake up so try again 1 minute later if the content is not loading)
-
 
 ![Main view](/screenshot1.png "Front page")
 ![Main view](/screenshot2.png "Category page")
