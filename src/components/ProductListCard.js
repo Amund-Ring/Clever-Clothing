@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
 import '../styles/ProductListCard.css';
-
 import productImages from '../assets/products/productImports';
 
 function ProductListCard({ item, variant }) {

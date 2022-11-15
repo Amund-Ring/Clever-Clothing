@@ -3,12 +3,13 @@ import '../styles/CartItem.css';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import shoppingCartApi from '../api/shoppingCart';
+import productImages from '../assets/products/productImports';
 
 function CartItem({ cartItem, closeMenus, setUpdateCart }) {
   const handleDelete = () => {
     shoppingCartApi.deleteCartItem(cartItem.id);
-    setUpdateCart(b => !b)
-  }
+    setUpdateCart(b => !b);
+  };
 
   return (
     <div className='cartItem'>
@@ -22,7 +23,9 @@ function CartItem({ cartItem, closeMenus, setUpdateCart }) {
         <div
           className='cartItemImg'
           style={{
-            backgroundImage: `url(${cartItem.variant.image})`
+            backgroundImage: `url(${
+              productImages[`${cartItem.variant.image}`]
+            })`
           }}
         ></div>
       </Link>
