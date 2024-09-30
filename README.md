@@ -1,3 +1,7 @@
+![React](https://img.shields.io/badge/React-61DAFB.svg)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow.svg)
+<br/>
+
 # Clever Clothing - Clothing Store Website
 
 #### Technologies used:
